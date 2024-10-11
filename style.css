@@ -1,0 +1,177 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+}
+
+ body {
+    background-color: rgb(88, 98, 118);    
+
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: 20% 50vh 20%;
+    grid-template-areas: 
+    "startbutton thegame popup";
+    column-gap: 8vh;
+}
+
+.lines {
+    grid-area: thegame;
+    pointer-events: none;
+    background: url('your_transparent.png');
+    background-color: rgba(204, 23, 23, 0);
+    height: 50vh;
+    width: 50vh;
+    position: relative;
+    padding: 1%;
+    z-index: 1;
+    
+}
+
+#vll {
+    position: absolute;
+    top: 5%;
+    left: 34%;
+    border-left: 2px solid rgb(17, 11, 1);
+    height: 90%;
+}
+
+#vlr {
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    border-left: 2px solid rgb(17, 11, 1);
+    height: 90%;
+}
+
+#hlb {
+    position: absolute;
+    top: 34%;
+    left: 5%;
+    border-top: 2px solid rgb(17, 11, 1);
+    width: 90%;
+}
+
+#hlt {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    border-top: 2px solid rgb(17, 11, 1);
+    width: 90%;
+}
+
+.container {
+    background-color: rgb(212, 200, 176);
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='40' ry='40' stroke='black' stroke-width='25' stroke-dasharray='1%2c 2' stroke-dashoffset='40' stroke-linecap='butt'/%3e%3c/svg%3e");
+    border-radius: 40px;
+    height: 50vh;
+    width: 50vh;
+    position: relative;
+    z-index: 0;
+    padding: 2vh;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    
+    grid-template-areas: 
+    "top top top" 
+    "mid mid mid"
+    "bot bot bot";
+    grid-area: thegame;
+}
+
+.cell {
+    background-color: rgba(163, 163, 163, 0);
+    color: rgb(31, 25, 16);
+    height: 100%;
+    width: 100%;
+    font-size: 13vh;
+    line-height: 0px;
+    font-family: 'Bungee Shade', cursive;
+    place-self: center;
+    display: grid;
+    place-items: center;
+}
+
+#aloitusNappi {
+    grid-area: startbutton;
+    background-color: rgb(130, 149, 175);
+    height: 6vh;
+    width: 14vh;
+    border-radius: 70px;
+    cursor: pointer;
+    border: double 6px rgb(31, 25, 16);
+    display: grid;
+    place-items: center;
+    justify-self: end;
+
+}
+
+#start {
+    color: rgb(236, 224, 198);
+    line-height: 0px;
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+
+
+
+#ilmoitus {
+    grid-area: popup;
+    background-color: rgba(130, 149, 175);
+    border-radius: 40px;
+    border: double 6px rgb(31, 25, 16);
+    height: 20vh;
+    width: 30vh;
+    padding: 0.17em;
+    z-index: 2;
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-self: start;
+    grid-template-columns: auto;
+    grid-template-rows: 10% 45% 10% 25% 10%;
+    grid-template-areas:
+    "." 
+    "texti"
+    "."
+    "replay"
+    ".";
+}
+
+
+#ilmoitusTeksti {
+    color: rgb(236, 224, 198);
+    font-size: 3.3vh;
+    grid-area: texti;
+}
+
+
+#ilmoitusNappi {
+    background-color: rgb(212, 200, 176);
+    color: rgb(31, 25, 16);
+    cursor: pointer;
+    border-radius: 40px;
+    border: double 6px rgb(31, 25, 16);
+    height: 5vh;
+    width: 14vh;
+    padding: 2%;
+    align-self: end;
+    font-size: 1.8rem;
+    line-height: 0%;
+    grid-area: replay;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
